@@ -1,5 +1,7 @@
 package com.exercicio2.tdd;
 
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.ArrayList;
 import java.util.Date;
 
@@ -15,6 +17,8 @@ class BoletoTests {
     Fatura fatura;
     Boleto boleto;
     Pagamento pagamento;
+    ProcessadorBoletos proc;
+    ArrayList<Boleto> lista;
 
     @BeforeEach
     void constructor() {
@@ -22,9 +26,14 @@ class BoletoTests {
         this.boleto = new Boleto(123, new Date(), 100);
         this.pagamento = new Pagamento(boleto.getCodigo(), "BOLETO");
 
-        ArrayList<Boleto> lista = new ArrayList<>();
+        this.lista = new ArrayList<>();
         lista.add(boleto);
-        ProcessadorBoletos proc = new ProcessadorBoletos(lista, fatura);
+        this.proc = new ProcessadorBoletos(lista, fatura);
+    }
+
+    @Test
+    void verificaProcessamentoBoletos() {
+        assertTrue(proc.verificaBoletos(lista, fatura));
     }
 
 }
