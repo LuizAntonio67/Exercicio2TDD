@@ -8,12 +8,14 @@ public class Fatura  {
     private Date data;
     private int valor;
     private String cliente;
+    private boolean paga;
 
     public Fatura(Date data, int valor, String cliente) {
         this.id = UUID.randomUUID();
         this.data = data;
         this.valor = valor;
         this.cliente = cliente;
+        this.paga = false;
     }
 
     public UUID getId() {
@@ -32,4 +34,13 @@ public class Fatura  {
         return cliente;
     }
 
+    public boolean isPaga() {
+        return paga;
+    }
+
+    public void setPaga() {
+        this.paga = true;
+    }
+
+    
 }
