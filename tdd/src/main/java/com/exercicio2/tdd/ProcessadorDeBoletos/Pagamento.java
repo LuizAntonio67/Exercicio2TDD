@@ -1,4 +1,4 @@
-package com.exercicio2.tdd;
+package com.exercicio2.tdd.ProcessadorDeBoletos;
 
 import java.util.Date;
 

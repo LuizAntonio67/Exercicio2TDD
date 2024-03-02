@@ -3,10 +3,13 @@ package com.exercicio2.tdd;
 import java.util.ArrayList;
 import java.util.Date;
 
-import org.assertj.core.util.Arrays;
-import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import com.exercicio2.tdd.ProcessadorDeBoletos.Boleto;
+import com.exercicio2.tdd.ProcessadorDeBoletos.Fatura;
+import com.exercicio2.tdd.ProcessadorDeBoletos.Pagamento;
+import com.exercicio2.tdd.ProcessadorDeBoletos.ProcessadorBoletos;
 
 class BoletoTests {
     Fatura fatura;
