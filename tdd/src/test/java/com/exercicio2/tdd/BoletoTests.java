@@ -17,7 +17,7 @@ class BoletoTests {
 
     @Test
     void verificaCriacaoPagamento() {
-        Pagamento pagamento = new Pagamento(100, new Date(), "BOLETO");
+        Pagamento pagamento = new Pagamento(new Boleto(123, new Date(), 100), "BOLETO");
     }
 
 }
