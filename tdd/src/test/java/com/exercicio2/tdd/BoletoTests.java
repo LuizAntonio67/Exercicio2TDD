@@ -74,7 +74,8 @@ class BoletoTests {
 
     @Test
     void verificaFaturaPagaTrue() {
-        assertTrue(proc.verificaFatura(fatura1));
+        proc.processamentoBoletos(lista1, fatura1);
+        assertTrue(proc.verificaFaturaPaga(fatura1.getId()));
     }
 
 }

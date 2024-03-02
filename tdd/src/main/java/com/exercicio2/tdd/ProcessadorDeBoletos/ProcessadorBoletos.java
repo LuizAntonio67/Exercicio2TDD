@@ -2,6 +2,7 @@ package com.exercicio2.tdd.ProcessadorDeBoletos;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.UUID;
 
 public class ProcessadorBoletos {
     private HashMap<Fatura, ArrayList<Pagamento>> listaFaturas;
@@ -20,7 +21,7 @@ public class ProcessadorBoletos {
             } else {
                 listaFaturas.get(fatura).add(new Pagamento(listaBoletos.get(i), "BOLETO"));
             }
-            
+
             soma += listaBoletos.get(i).getValor_pago();
         }
 
@@ -28,6 +29,16 @@ public class ProcessadorBoletos {
             fatura.setPaga();
             return true;
         }
+        return false;
+    }
+
+    public boolean verificaFaturaPaga(UUID id) {
+        for (Fatura fatura : listaFaturas.keySet()) {
+            if(fatura.getId().equals(id)) {
+                if((fatura.isPaga())) return true;
+            }
+        }
+
         return false;
     }
     
