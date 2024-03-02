@@ -42,5 +42,4 @@ public class Fatura  {
         this.paga = true;
     }
 
-    
 }
