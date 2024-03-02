@@ -24,7 +24,7 @@ class BoletoTests {
     void verificaCriacaoProcessador() {
         ArrayList<Boleto> lista = new ArrayList<>();
         lista.add(boleto);
-        ProcessadorBoletos proc = new ProcessadorBoletos(lista);
+        ProcessadorBoletos proc = new ProcessadorBoletos(lista, fatura);
     }
 
 }
