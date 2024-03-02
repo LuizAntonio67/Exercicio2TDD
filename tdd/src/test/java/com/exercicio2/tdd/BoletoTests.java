@@ -21,10 +21,7 @@ class BoletoTests {
         this.fatura = new Fatura(new Date(), 100, "Luiz");
         this.boleto = new Boleto(123, new Date(), 100);
         this.pagamento = new Pagamento(boleto.getCodigo(), "BOLETO");
-    }
-    
-    @Test
-    void verificaCriacaoProcessador() {
+
         ArrayList<Boleto> lista = new ArrayList<>();
         lista.add(boleto);
         ProcessadorBoletos proc = new ProcessadorBoletos(lista, fatura);
