@@ -20,7 +20,7 @@ class BoletoTests {
     void constructor() {
         this.fatura = new Fatura(new Date(), 100, "Luiz");
         this.boleto = new Boleto(123, new Date(), 100);
-        this.pagamento = new Pagamento(boleto, "BOLETO");
+        this.pagamento = new Pagamento(boleto.getCodigo(), "BOLETO");
     }
     
     @Test
