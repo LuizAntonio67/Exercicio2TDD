@@ -41,35 +41,40 @@ class BoletoTests {
 
         lista1 = new ArrayList<>();
         lista1.add(boleto2);
-        lista1.add(boleto6); // Soma = 920. Fatura paga
+        lista1.add(boleto6);
 
         lista2 = new ArrayList<>();
         lista2.add(boleto3);
         lista2.add(boleto5);
-        lista2.add(boleto4); // Soma = 910. Fatura não paga
+        lista2.add(boleto4);
 
         lista3 = new ArrayList<>();
         lista3.add(boleto1);
         lista3.add(boleto3);
         lista3.add(boleto2);
-        lista3.add(boleto2); // Soma = 1540. Fatura não paga
+        lista3.add(boleto2);
 
         proc = new ProcessadorBoletos();
     }
 
     @Test
     void verificaProcessamentoBoletos1() {
-        assertTrue(proc.processamentoBoletos(lista1, fatura1));
+        assertTrue(proc.processamentoBoletos(lista1, fatura1)); // Soma = 920. Fatura paga
     }
 
     @Test
     void verificaProcessamentoBoletos2() {
-        assertFalse(proc.processamentoBoletos(lista2, fatura2));
+        assertFalse(proc.processamentoBoletos(lista2, fatura2)); // Soma = 910. Fatura não paga
     }
 
     @Test
     void verificaProcessamentoBoletos3() {
-        assertFalse(proc.processamentoBoletos(lista3, fatura3));
+        assertFalse(proc.processamentoBoletos(lista3, fatura3)); // Soma = 1540. Fatura não paga
+    }
+
+    @Test
+    void verificaFaturaPagaTrue() {
+        assertTrue(proc.verificaFatura(fatura1));
     }
 
 }
