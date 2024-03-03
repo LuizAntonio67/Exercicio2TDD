@@ -14,7 +14,7 @@ import com.exercicio2.tdd.ProcessadorDeBoletos.*;
 /**
  * This class contains unit tests for the Boleto class and its related classes.
  */
-class BoletoTests {
+class ProcessadorBoletoTests {
     Fatura fatura1;
     Fatura fatura2;
     Fatura fatura3;
