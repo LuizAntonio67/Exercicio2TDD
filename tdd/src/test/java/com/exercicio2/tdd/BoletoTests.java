@@ -11,6 +11,9 @@ import org.junit.jupiter.api.Test;
 
 import com.exercicio2.tdd.ProcessadorDeBoletos.*;
 
+/**
+ * This class contains unit tests for the Boleto class and its related classes.
+ */
 class BoletoTests {
     Fatura fatura1;
     Fatura fatura2;
@@ -26,6 +29,9 @@ class BoletoTests {
     ArrayList<Boleto> lista3;
     ProcessadorBoletos proc;
 
+    /**
+     * Sets up the test environment by initializing the necessary objects.
+     */
     @BeforeEach
     void constructor() {
         fatura1 = new Fatura(new Date(), 300, "Yasmine");
@@ -57,27 +63,47 @@ class BoletoTests {
         proc = new ProcessadorBoletos();
     }
 
+    /**
+     * Tests the processamentoBoletos method with a list of boletos and a fatura.
+     * Expects the method to return true, indicating that the fatura has been paid.
+     */
     @Test
     void verificaProcessamentoBoletos1() {
         assertTrue(proc.processamentoBoletos(lista1, fatura1)); // Soma = 920. Fatura paga
     }
 
+    /**
+     * Tests the processamentoBoletos method with a list of boletos and a fatura.
+     * Expects the method to return false, indicating that the fatura has not been paid.
+     */
     @Test
     void verificaProcessamentoBoletos2() {
         assertFalse(proc.processamentoBoletos(lista2, fatura2)); // Soma = 910. Fatura não paga
     }
 
+    /**
+     * Tests the processamentoBoletos method with a list of boletos and a fatura.
+     * Expects the method to return false, indicating that the fatura has not been paid.
+     */
     @Test
     void verificaProcessamentoBoletos3() {
         assertFalse(proc.processamentoBoletos(lista3, fatura3)); // Soma = 1540. Fatura não paga
     }
 
+    /**
+     * Tests the verificaFaturaPaga method after processing a list of boletos and a fatura.
+     * Expects the method to return true, indicating that the fatura has been paid.
+     */
     @Test
     void verificaFaturaPagaTrue() {
         proc.processamentoBoletos(lista1, fatura1);
         assertTrue(proc.verificaFaturaPaga(fatura1.getId()));
     }
 
+    /**
+     * Tests the verificaFaturaPaga method after processing a list of boletos and a fatura.
+     * Expects the method to return false, indicating that the fatura has not been paid.
+     */
     @Test
     void verificaFaturaPagaFalse() {
         proc.processamentoBoletos(lista2, fatura2);
