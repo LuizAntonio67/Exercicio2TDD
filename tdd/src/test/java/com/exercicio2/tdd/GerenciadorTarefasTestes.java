@@ -30,6 +30,6 @@ class GerenciadorTarefasTestes {
 	    
 	    @Test
 	    void verificaAtualizaDescricaoTarefa() {
-	        assertTrue(gerenciador.atualizaTituloTarefa("Limpar a casa", "Preciso limpar a minha casa as 14 horas")); // caso retorne true, atualizou o titulo com sucesso
+	        assertTrue(gerenciador.atualizaDescricaoTarefa("Limpar a casa", "Preciso limpar a minha casa as 14 horas")); // caso retorne true, atualizou a descricao com sucesso
 	    }
 }
