@@ -1,5 +1,7 @@
 package com.exercicio2.tdd.GerenciadorDeTarefas;
 
+import java.util.ArrayList;
+
 public class GerenciadorTarefas {
 	private ArrayList<Tarefa> listaTarefas;
 	
@@ -7,22 +9,26 @@ public class GerenciadorTarefas {
 		this.listaTarefas = new ArrayList<>();
 	}
 	
-	public void adicionaTarefa(Tarefa tarefa) {
+	public boolean adicionaTarefa(Tarefa tarefa) {
 		listaTarefas.add(tarefa);
+		return true;
 	}
 	
-	public void atualizaTituloTarefa(String tituloAntigo, String novoTitulo) {
+	public boolean atualizaTituloTarefa(String tituloAntigo, String novoTitulo) {
 		for(Tarefa tarefa: listaTarefas) {
 			if (tarefa.getTitulo().equals(tituloAntigo)) {
 				tarefa.setTitulo(novoTitulo);	
+				return true;
 			}
-		}
+		} return false;
 	}
 	
-	public void atualizaDescricaoTarefa(String titulo, String descricao) {
+	public boolean atualizaDescricaoTarefa(String titulo, String descricao) {
 		for(Tarefa tarefa: listaTarefas) {
 			if (tarefa.getTitulo().equals(titulo)) {
 				tarefa.setDescricao(descricao);
+				return true;
 			}
+		} return false;
 	}
 }

@@ -2,11 +2,16 @@ package com.exercicio2.tdd;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import com.exercicio2.tdd.GerenciadorDeTarefas.GerenciadorTarefas;
 import com.exercicio2.tdd.GerenciadorDeTarefas.Tarefa;
 
 class GerenciadorTarefasTestes {
+	Tarefa tarefa1;
+	Tarefa tarefa2;
+	Tarefa tarefa3;
+	GerenciadorTarefas gerenciador;
 	
 	 @BeforeEach
 	    void constructor() {
@@ -14,7 +19,7 @@ class GerenciadorTarefasTestes {
 	        tarefa2 = new Tarefa("Aparar a grama", "preciso apara a grama as 14 horas", "14/12/2024", "Media");
 	        tarefa3 = new Tarefa("Jogar pingong", "Quero jogar pingpong as 15 horas", "16/12/2024", "Baixa");
 	        
-	        GerenciadorTarefas gerenciador = new GerenciadorTarefas();
+	        gerenciador = new GerenciadorTarefas();
 	   
 	    }
 
