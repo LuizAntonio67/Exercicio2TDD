@@ -22,4 +22,9 @@ class GerenciadorTarefasTestes {
 	    void verificaCriacaoNovaTarefa() {
 	        assertTrue(gerenciador.adicionaTarefa(tarefa1)); // caso retorne true, a tarefa foi criada com sucesso
 	    }
+	    
+	    @Test
+	    void verificaAtualizaTituloTarefa() {
+	        assertTrue(gerenciador.atualizaTituloTarefa(tarefa1, "Limpar a casa")); // caso retorne true, atualizou o titulo com sucesso
+	    }
 }
