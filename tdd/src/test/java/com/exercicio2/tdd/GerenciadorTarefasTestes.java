@@ -27,4 +27,9 @@ class GerenciadorTarefasTestes {
 	    void verificaMudaTituloTarefa() {
 	        assertTrue(gerenciador.atualizaTituloTarefa("Jogar o lixo", "Limpar a casa")); // caso retorne true, atualizou o titulo com sucesso
 	    }
+	    
+	    @Test
+	    void verificaAtualizaDescricaoTarefa() {
+	        assertTrue(gerenciador.atualizaTituloTarefa("Limpar a casa", "Preciso limpar a minha casa as 14 horas")); // caso retorne true, atualizou o titulo com sucesso
+	    }
 }
