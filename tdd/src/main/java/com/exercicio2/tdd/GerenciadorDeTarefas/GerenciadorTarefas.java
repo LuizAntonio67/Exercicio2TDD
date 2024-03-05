@@ -10,5 +10,15 @@ public class GerenciadorTarefas {
 	public adicionaTarefa(Tarefa tarefa) {
 		listaTarefas.add(tarefa);
 	}
+	
+	public atualizaTituloTarefa(String tituloAntigo, String novoTitulo) {
+		for(Tarefa tarefa: listaTarefas) {
+			if (tarefa.getTitulo().equals(tituloAntigo)) {
+				tarefa.setTitulo(novoTitulo);
+				
+			}
+			
+		}
+	}
 
 }

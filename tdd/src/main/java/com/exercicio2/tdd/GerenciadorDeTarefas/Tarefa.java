@@ -18,16 +18,32 @@ public class Tarefa {
 		return titulo;
 	}
 	
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	
 	public String getDescricao() {
 		return descricao;
+	}
+	
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
 	}
 	
 	public String getDataNascimento() {
 		return dataNascimento;
 	}
 	
+	public void setDataNascimento(String dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+	
 	public String getPrioridade() {
 		return prioridade;
+	}
+	
+	public void setPrioridade(String prioridade) {
+		this.prioridade = prioridade;
 	}
 
 }
