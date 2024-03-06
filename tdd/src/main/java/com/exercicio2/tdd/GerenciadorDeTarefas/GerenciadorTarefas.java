@@ -14,21 +14,24 @@ public class GerenciadorTarefas {
 		return true;
 	}
 	
-	public boolean atualizaTituloTarefa(String tituloAntigo, String novoTitulo) {
+	public boolean atualizaTituloTarefa(int idProcurado, String novoTitulo) {
 		for(Tarefa tarefa: listaTarefas) {
-			if (tarefa.getTitulo().equals(tituloAntigo)) {
+			if (tarefa.getId()== idProcurado) {
 				tarefa.setTitulo(novoTitulo);	
 				return true;
 			}
-		} return false;
+		}
+		return false;
 	}
 	
-	public boolean atualizaDescricaoTarefa(String titulo, String descricao) {
+	public boolean atualizaDescricaoTarefa(int idProcurado, String descricao) {
 		for(Tarefa tarefa: listaTarefas) {
-			if (tarefa.getTitulo().equals(titulo)) {
+			if (tarefa.getId() == idProcurado) {
 				tarefa.setDescricao(descricao);
 				return true;
 			}
-		} return false;
+	}
+	return false;
 	}
 }
+

@@ -30,11 +30,13 @@ class GerenciadorTarefasTestes {
 	    
 	    @Test
 	    void verificaMudaTituloTarefa() {
-	        assertTrue(gerenciador.atualizaTituloTarefa("Jogar o lixo", "Limpar a casa")); // caso retorne true, atualizou o titulo com sucesso
+				gerenciador.adicionaTarefa(tarefa1);
+	        assertTrue(gerenciador.atualizaTituloTarefa(1, "Limpar a casa")); // caso retorne true, atualizou o titulo com sucesso
 	    }
 	    
 	    @Test
-	    void verificaAtualizaDescricaoTarefa() {
-	        assertTrue(gerenciador.atualizaDescricaoTarefa("Limpar a casa", "Preciso limpar a minha casa as 14 horas")); // caso retorne true, atualizou a descricao com sucesso
-	    }
-}
+	    void verificaAtualizaDescricaoTarefa()  {
+				gerenciador.adicionaTarefa(tarefa2);
+	        assertTrue(gerenciador.atualizaDescricaoTarefa(1, "Preciso limpar a minha casa as 14 horas")); // caso retorne true, atualizou a descricao
+			}
+		}
