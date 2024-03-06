@@ -1,18 +1,20 @@
 package com.exercicio2.tdd.GerenciadorDeTarefas;
 
+import java.time.LocalDate;
+
 public class Tarefa {
 	
 	private int id;
 	private String titulo;
 	private String descricao;
-	private String dataNascimento;
-	private String prioridade;
+	private LocalDate dataVencimento;
+	private Prioridade prioridade;
 	
-	public Tarefa(String titulo, String descricao, String dataNascimento, String prioridade) {
+	public Tarefa(String titulo, String descricao, LocalDate dataVencimento, Prioridade prioridade) {
 		this.id += 1;
 		this.titulo = titulo;
 		this.descricao = descricao;
-		this.dataNascimento = dataNascimento;
+		this.dataVencimento = dataVencimento;
 		this.prioridade = prioridade;
 	}
 
@@ -36,19 +38,18 @@ public class Tarefa {
 		this.descricao = descricao;
 	}
 	
-	public String getDataNascimento() {
-		return dataNascimento;
-	}
+	public LocalDate getDataVencimento() {
+		return dataVencimento;
+}
+	public void setDataVencimento(LocalDate dataVencimento) {
+		this.dataVencimento = dataVencimento;
+}
 	
-	public void setDataNascimento(String dataNascimento) {
-		this.dataNascimento = dataNascimento;
-	}
-	
-	public String getPrioridade() {
+	public Prioridade getPrioridade() {
 		return prioridade;
 	}
 	
-	public void setPrioridade(String prioridade) {
+	public void setPrioridade(Prioridade prioridade) {
 		this.prioridade = prioridade;
 	}
 }

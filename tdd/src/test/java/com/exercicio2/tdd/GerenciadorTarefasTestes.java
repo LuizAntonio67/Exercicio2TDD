@@ -4,8 +4,11 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.time.LocalDate;
+
 import com.exercicio2.tdd.GerenciadorDeTarefas.GerenciadorTarefas;
 import com.exercicio2.tdd.GerenciadorDeTarefas.Tarefa;
+import com.exercicio2.tdd.GerenciadorDeTarefas.Prioridade;
 
 class GerenciadorTarefasTestes {
 	Tarefa tarefa1;
@@ -15,9 +18,9 @@ class GerenciadorTarefasTestes {
 	
 	 @BeforeEach
 	    void constructor() {
-	        tarefa1 = new Tarefa("Jogar o lixo", "preciso jogar o lixo as 13 horas", "15/12/2024", "Alta");
-	        tarefa2 = new Tarefa("Aparar a grama", "preciso apara a grama as 14 horas", "14/12/2024", "Media");
-	        tarefa3 = new Tarefa("Jogar pingong", "Quero jogar pingpong as 15 horas", "16/12/2024", "Baixa");
+	        tarefa1 = new Tarefa("Jogar o lixo", "preciso jogar o lixo as 13 horas", LocalDate.of(2024, 1, 15), Prioridade.ALTA);
+	        tarefa2 = new Tarefa("Aparar a grama", "preciso apara a grama as 14 horas", LocalDate.of(2024, 2, 15), Prioridade.MEDIA);
+	        tarefa3 = new Tarefa("Jogar pingong", "Quero jogar pingpong as 15 horas", LocalDate.of(2024, 3, 6), Prioridade.BAIXA);
 	        
 	        gerenciador = new GerenciadorTarefas();
 	   
@@ -43,12 +46,12 @@ class GerenciadorTarefasTestes {
 			@Test
     void verificaAtualizaDataVencimentoTarefa() {
 			gerenciador.adicionaTarefa(tarefa3);
-        assertTrue(gerenciador.atualizaDataVencimentoTarefa(1, "13/12/2024")); // caso retorne true, atualizou a data da tarefa com sucesso
+        assertTrue(gerenciador.atualizaDataVencimentoTarefa(1,LocalDate.of(2023, 2, 15))); // caso retorne true, atualizou a data da tarefa com sucesso
     }
 		@Test
     void verificaMarcarPrioridadeTarefa() {
 			gerenciador.adicionaTarefa(tarefa3);
-        assertTrue(gerenciador.atualizaPrioridadeTarefa(1, "Baixa")); // caso retorne true, atualizou a prioridade da tarefa
+        assertTrue(gerenciador.atualizaPrioridadeTarefa(1, Prioridade.MEDIA)); // caso retorne true, atualizou a prioridade da tarefa
     }
 		@Test
     void verificaExcluirTarefa() {

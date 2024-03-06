@@ -1,5 +1,6 @@
 package com.exercicio2.tdd.GerenciadorDeTarefas;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class GerenciadorTarefas {
@@ -38,17 +39,17 @@ public class GerenciadorTarefas {
 	return false;
 	}
 
-	public boolean atualizaDataVencimentoTarefa(int idProcurado, String dataNascimento){
+	public boolean atualizaDataVencimentoTarefa(int idProcurado, LocalDate dataVencimento){
 		for(Tarefa tarefa: listaTarefas) {
 			if (tarefa.getId() == idProcurado) {
-				tarefa.setDataNascimento(dataNascimento);;
+				tarefa.setDataVencimento(dataVencimento);
 				return true;
 			}
 	}
 	return false;
 }
 
-public boolean atualizaPrioridadeTarefa(int idProcurado, String prioridade){
+public boolean atualizaPrioridadeTarefa(int idProcurado, Prioridade prioridade){
 	for(Tarefa tarefa: listaTarefas) {
 		if (tarefa.getId() == idProcurado) {
 			tarefa.setPrioridade(prioridade);
