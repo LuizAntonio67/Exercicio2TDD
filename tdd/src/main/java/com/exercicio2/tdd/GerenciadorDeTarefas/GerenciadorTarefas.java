@@ -47,5 +47,15 @@ public class GerenciadorTarefas {
 	}
 	return false;
 }
+
+public boolean atualizaPrioridadeTarefa(int idProcurado, String prioridade){
+	for(Tarefa tarefa: listaTarefas) {
+		if (tarefa.getId() == idProcurado) {
+			tarefa.setPrioridade(prioridade);
+			return true;
+		}
+}
+return false;
+}
 }
 

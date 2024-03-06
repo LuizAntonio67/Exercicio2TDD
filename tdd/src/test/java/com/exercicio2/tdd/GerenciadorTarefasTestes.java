@@ -48,7 +48,7 @@ class GerenciadorTarefasTestes {
 		@Test
     void verificaMarcarPrioridadeTarefa() {
 			gerenciador.adicionaTarefa(tarefa3);
-        assertTrue(gerenciador.atualizaPrioridadeTarefa(tarefa1, "Baixa")); // caso retorne true, atualizou a prioridade da tarefa
+        assertTrue(gerenciador.atualizaPrioridadeTarefa(1, "Baixa")); // caso retorne true, atualizou a prioridade da tarefa
     }
 
 
