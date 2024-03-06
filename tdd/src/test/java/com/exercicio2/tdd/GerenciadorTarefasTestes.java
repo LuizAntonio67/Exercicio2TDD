@@ -76,13 +76,13 @@ class GerenciadorTarefasTestes {
         // Chama o método para exibir tarefas ordenadas
         gerenciador.exibirTarefasOrdenadas();
 
-        // Obter a lista de tarefas após a ordenação
+        // Obtem a lista de tarefas após a ordenação
         ArrayList<Tarefa> tarefasOrdenadas = gerenciador.getListaTarefas();
 
         // Verifica se as tarefas estão ordenadas corretamente
-        assertEquals("Jogar Basquete", tarefasOrdenadas.get(0).getDescricao());
-        assertEquals("jogar futebol", tarefasOrdenadas.get(1).getDescricao());
-        assertEquals("Jogar tennis", tarefasOrdenadas.get(2).getDescricao());
+        assertEquals("talvez eu jogue basquete as 16:00", tarefasOrdenadas.get(0).getDescricao());
+        assertEquals("quero jogar futebol as 15:00", tarefasOrdenadas.get(1).getDescricao());
+        assertEquals("Gostaria de jogar tênis as 17:00", tarefasOrdenadas.get(2).getDescricao());
     }
 }
 		

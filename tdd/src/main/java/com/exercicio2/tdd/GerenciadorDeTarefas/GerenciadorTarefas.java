@@ -2,6 +2,8 @@ package com.exercicio2.tdd.GerenciadorDeTarefas;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
 public class GerenciadorTarefas {
 	private ArrayList<Tarefa> listaTarefas;
@@ -68,6 +70,32 @@ public boolean excluiTarefa(int idProcurado) {
 }
 return false;
 }
+
+public ArrayList<Tarefa> getListaTarefas() {
+	return listaTarefas;
+}
+
+public void exibirTarefasOrdenadas() {
+        // Ordena a lista de tarefas usando um comparador personalizado
+        Collections.sort(listaTarefas, new Comparator<Tarefa>() {
+            @Override
+            public int compare(Tarefa tarefa1, Tarefa tarefa2) {
+                // Compara as datas de vencimento
+                int compareDataVencimento = tarefa1.getDataVencimento().compareTo(tarefa2.getDataVencimento());
+                if (compareDataVencimento != 0) {
+                    return compareDataVencimento;
+                }
+                // Se as datas de vencimento forem iguais, compara as prioridades
+                return tarefa1.getPrioridade().compareTo(tarefa2.getPrioridade());
+            }
+        });
+
+        // Exibe as tarefas ordenadas
+        for (Tarefa tarefa : listaTarefas) {
+            System.out.println(tarefa);
+        }
+    }
+
 
 }
 
