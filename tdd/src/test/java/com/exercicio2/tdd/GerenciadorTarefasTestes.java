@@ -50,6 +50,10 @@ class GerenciadorTarefasTestes {
 			gerenciador.adicionaTarefa(tarefa3);
         assertTrue(gerenciador.atualizaPrioridadeTarefa(1, "Baixa")); // caso retorne true, atualizou a prioridade da tarefa
     }
-
+		@Test
+    void verificaExcluirTarefa() {
+			gerenciador.adicionaTarefa(tarefa3);
+        assertTrue(gerenciador.excluiTarefa(1)); // caso retorne true, excluiu a tarefa com sucesso
+    }
 
 		}
