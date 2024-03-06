@@ -39,4 +39,10 @@ class GerenciadorTarefasTestes {
 				gerenciador.adicionaTarefa(tarefa2);
 	        assertTrue(gerenciador.atualizaDescricaoTarefa(1, "Preciso limpar a minha casa as 14 horas")); // caso retorne true, atualizou a descricao
 			}
+
+			@Test
+    void verificaAtualizaDataVencimentoTarefa() {
+			gerenciador.adicionaTarefa(tarefa3);
+        assertTrue(gerenciador.atualizaTituloTarefa(1, "13/12/2024")); // caso retorne true, atualizou a data da tarefa com sucesso
+    }
 		}
