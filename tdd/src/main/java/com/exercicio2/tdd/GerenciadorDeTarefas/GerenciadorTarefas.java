@@ -76,7 +76,7 @@ public ArrayList<Tarefa> getListaTarefas() {
 }
 
 public void exibirTarefasOrdenadas() {
-        // Ordena a lista de tarefas usando um comparador personalizado
+        // Ordena a lista de tarefas usando um comparador
         Collections.sort(listaTarefas, new Comparator<Tarefa>() {
             @Override
             public int compare(Tarefa tarefa1, Tarefa tarefa2) {
@@ -90,7 +90,7 @@ public void exibirTarefasOrdenadas() {
             }
         });
 
-        // Exibe as tarefas ordenadas
+        // Exibe as tarefas em ordem
         for (Tarefa tarefa : listaTarefas) {
             System.out.println(tarefa);
         }

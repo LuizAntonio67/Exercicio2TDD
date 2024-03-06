@@ -62,7 +62,7 @@ class GerenciadorTarefasTestes {
         assertTrue(gerenciador.excluiTarefa(1)); // caso retorne true, excluiu a tarefa com sucesso
     }
 		@Test
-    void testExibirTarefasOrdenadas() {
+    void verificaExibeTarefasOrdenadas() {
         // Adiciona algumas tarefas fora de ordem
         Tarefa tarefa1 = new Tarefa("jogar futebol", "quero jogar futebol as 15:00", LocalDate.of(2024, 3, 15), Prioridade.ALTA);
         Tarefa tarefa2 = new Tarefa("Jogar Basquete", "talvez eu jogue basquete as 16:00", LocalDate.of(2024, 3, 10), Prioridade.BAIXA);
