@@ -2,9 +2,12 @@ package com.exercicio2.tdd;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 import com.exercicio2.tdd.GerenciadorDeTarefas.GerenciadorTarefas;
 import com.exercicio2.tdd.GerenciadorDeTarefas.Tarefa;
@@ -58,5 +61,28 @@ class GerenciadorTarefasTestes {
 			gerenciador.adicionaTarefa(tarefa3);
         assertTrue(gerenciador.excluiTarefa(1)); // caso retorne true, excluiu a tarefa com sucesso
     }
+		@Test
+    void testExibirTarefasOrdenadas() {
+        // Adiciona algumas tarefas fora de ordem
+        Tarefa tarefa1 = new Tarefa("jogar futebol", "quero jogar futebol as 15:00", LocalDate.of(2024, 3, 15), Prioridade.ALTA);
+        Tarefa tarefa2 = new Tarefa("Jogar Basquete", "talvez eu jogue basquete as 16:00", LocalDate.of(2024, 3, 10), Prioridade.BAIXA);
+        Tarefa tarefa3 = new Tarefa("Jogar tennis", "Gostaria de jogar tênis as 17:00", LocalDate.of(2024, 3, 20), Prioridade.MEDIA);
 
-		}
+        // Adiciona as tarefas à lista do gerenciador
+        gerenciador.adicionaTarefa(tarefa1);
+        gerenciador.adicionaTarefa(tarefa2);
+        gerenciador.adicionaTarefa(tarefa3);
+
+        // Chama o método para exibir tarefas ordenadas
+        gerenciador.exibirTarefasOrdenadas();
+
+        // Obter a lista de tarefas após a ordenação
+        ArrayList<Tarefa> tarefasOrdenadas = gerenciador.getListaTarefas();
+
+        // Verifica se as tarefas estão ordenadas corretamente
+        assertEquals("Jogar Basquete", tarefasOrdenadas.get(0).getDescricao());
+        assertEquals("jogar futebol", tarefasOrdenadas.get(1).getDescricao());
+        assertEquals("Jogar tennis", tarefasOrdenadas.get(2).getDescricao());
+    }
+}
+		
