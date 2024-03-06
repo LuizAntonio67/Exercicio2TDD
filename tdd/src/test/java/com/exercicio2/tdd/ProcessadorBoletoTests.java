@@ -109,4 +109,5 @@ class ProcessadorBoletoTests {
         proc.processamentoBoletos(lista2, fatura2);
         assertFalse(proc.verificaFaturaPaga(fatura2.getId()));
     }
+
 }
