@@ -25,7 +25,7 @@ class GerenciadorTarefasTestes {
 
 	    @Test
 	    void verificaCriacaoNovaTarefa() {
-	        assertTrue(gerenciador.adicionaTarefa(tarefa1)); // caso retorne true, a tarefa foi criada com sucesso
+	        assertTrue(gerenciador.adicionaTarefaTeste(tarefa1)); // caso retorne true, a tarefa foi criada com sucesso
 	    }
 	    
 	    @Test
@@ -43,6 +43,6 @@ class GerenciadorTarefasTestes {
 			@Test
     void verificaAtualizaDataVencimentoTarefa() {
 			gerenciador.adicionaTarefa(tarefa3);
-        assertTrue(gerenciador.atualizaTituloTarefa(1, "13/12/2024")); // caso retorne true, atualizou a data da tarefa com sucesso
+        assertTrue(gerenciador.atualizaDataVencimentoTarefa(1, "13/12/2024")); // caso retorne true, atualizou a data da tarefa com sucesso
     }
 		}

@@ -9,9 +9,13 @@ public class GerenciadorTarefas {
 		this.listaTarefas = new ArrayList<>();
 	}
 	
-	public boolean adicionaTarefa(Tarefa tarefa) {
+	public boolean adicionaTarefaTeste(Tarefa tarefa) {
 		listaTarefas.add(tarefa);
 		return true;
+	}
+
+	public void adicionaTarefa(Tarefa tarefa) {
+		listaTarefas.add(tarefa);
 	}
 	
 	public boolean atualizaTituloTarefa(int idProcurado, String novoTitulo) {
@@ -33,5 +37,15 @@ public class GerenciadorTarefas {
 	}
 	return false;
 	}
+
+	public boolean atualizaDataVencimentoTarefa(int idProcurado, String dataNascimento){
+		for(Tarefa tarefa: listaTarefas) {
+			if (tarefa.getId() == idProcurado) {
+				tarefa.setDataNascimento(dataNascimento);;
+				return true;
+			}
+	}
+	return false;
+}
 }
 
