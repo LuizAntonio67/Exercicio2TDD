@@ -3,7 +3,6 @@ package com.exercicio2.tdd.GerenciadorDeTarefas;
 import java.time.LocalDate;
 
 public class Tarefa {
-	
 	private int id;
 	private String titulo;
 	private String descricao;
@@ -11,7 +10,6 @@ public class Tarefa {
 	private Prioridade prioridade;
 	
 	public Tarefa(String titulo, String descricao, LocalDate dataVencimento, Prioridade prioridade) {
-		this.id += 1;
 		this.titulo = titulo;
 		this.descricao = descricao;
 		this.dataVencimento = dataVencimento;
@@ -20,6 +18,9 @@ public class Tarefa {
 
 	public int getId() {
 		return id;
+	}
+	public void setId(int proximoId) {
+		this.id = proximoId;
 	}
 	
 	public String getTitulo() {

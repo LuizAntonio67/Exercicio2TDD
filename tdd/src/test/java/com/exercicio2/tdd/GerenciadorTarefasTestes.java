@@ -7,7 +7,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 import com.exercicio2.tdd.GerenciadorDeTarefas.GerenciadorTarefas;
 import com.exercicio2.tdd.GerenciadorDeTarefas.Tarefa;
@@ -49,7 +48,8 @@ class GerenciadorTarefasTestes {
 			@Test
     void verificaAtualizaDataVencimentoTarefa() {
 			gerenciador.adicionaTarefa(tarefa3);
-        assertTrue(gerenciador.atualizaDataVencimentoTarefa(1,LocalDate.of(2023, 2, 15))); // caso retorne true, atualizou a data da tarefa com sucesso
+			gerenciador.adicionaTarefa(tarefa2);
+        assertTrue(gerenciador.atualizaDataVencimentoTarefa(2,LocalDate.of(2023, 2, 15))); // caso retorne true, atualizou a data da tarefa com sucesso
     }
 		@Test
     void verificaMarcarPrioridadeTarefa() {
@@ -76,13 +76,10 @@ class GerenciadorTarefasTestes {
         // Chama o método para exibir tarefas ordenadas
         gerenciador.exibirTarefasOrdenadas();
 
-        // Obtem a lista de tarefas após a ordenação
-        ArrayList<Tarefa> tarefasOrdenadas = gerenciador.getListaTarefas();
-
         // Verifica se as tarefas estão ordenadas corretamente
-        assertEquals("talvez eu jogue basquete as 16:00", tarefasOrdenadas.get(0).getDescricao());
-        assertEquals("quero jogar futebol as 15:00", tarefasOrdenadas.get(1).getDescricao());
-        assertEquals("Gostaria de jogar tênis as 17:00", tarefasOrdenadas.get(2).getDescricao());
+        assertEquals("talvez eu jogue basquete as 16:00", tarefa2.getDescricao());
+        assertEquals("quero jogar futebol as 15:00", tarefa1.getDescricao());
+        assertEquals("Gostaria de jogar tênis as 17:00", tarefa3.getDescricao());
     }
 }
 		

@@ -4,98 +4,76 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class GerenciadorTarefas {
-	private ArrayList<Tarefa> listaTarefas;
+	private Map<Integer, Tarefa> mapaTarefas;
+	private int proximoId;
 	
 	public GerenciadorTarefas() {
-		this.listaTarefas = new ArrayList<>();
+		 mapaTarefas = new HashMap<>();
+		 proximoId = 1;
 	}
 	
 	public boolean adicionaTarefaTeste(Tarefa tarefa) {
-		listaTarefas.add(tarefa);
+		tarefa.setId(proximoId);
+		mapaTarefas.put(proximoId, tarefa);
+		proximoId++;
 		return true;
 	}
 
 	public void adicionaTarefa(Tarefa tarefa) {
-		listaTarefas.add(tarefa);
+		tarefa.setId(proximoId);
+		mapaTarefas.put(proximoId, tarefa);
+		proximoId++;
 	}
 	
 	public boolean atualizaTituloTarefa(int idProcurado, String novoTitulo) {
-		for(Tarefa tarefa: listaTarefas) {
-			if (tarefa.getId()== idProcurado) {
-				tarefa.setTitulo(novoTitulo);	
-				return true;
-			}
-		}
-		return false;
+		mapaTarefas.get(idProcurado).setTitulo(novoTitulo);
+		return true;
 	}
 	
 	public boolean atualizaDescricaoTarefa(int idProcurado, String descricao) {
-		for(Tarefa tarefa: listaTarefas) {
-			if (tarefa.getId() == idProcurado) {
-				tarefa.setDescricao(descricao);
-				return true;
-			}
-	}
-	return false;
+		mapaTarefas.get(idProcurado).setDescricao(descricao);
+		return true;
 	}
 
 	public boolean atualizaDataVencimentoTarefa(int idProcurado, LocalDate dataVencimento){
-		for(Tarefa tarefa: listaTarefas) {
-			if (tarefa.getId() == idProcurado) {
-				tarefa.setDataVencimento(dataVencimento);
-				return true;
-			}
-	}
-	return false;
+		mapaTarefas.get(idProcurado).setDataVencimento(dataVencimento);
+		return true;
 }
 
 public boolean atualizaPrioridadeTarefa(int idProcurado, Prioridade prioridade){
-	for(Tarefa tarefa: listaTarefas) {
-		if (tarefa.getId() == idProcurado) {
-			tarefa.setPrioridade(prioridade);
-			return true;
-		}
-}
-return false;
+	mapaTarefas.get(idProcurado).setPrioridade(prioridade);
+	return true;
 }
 
 public boolean excluiTarefa(int idProcurado) {
-	for(Tarefa tarefa: listaTarefas) {
-		if (tarefa.getId() == idProcurado) {
-			listaTarefas.remove(tarefa);
-			return true;
-		}
-}
-return false;
-}
-
-public ArrayList<Tarefa> getListaTarefas() {
-	return listaTarefas;
+	mapaTarefas.remove(idProcurado);
+	return true;
 }
 
 public void exibirTarefasOrdenadas() {
-        // Ordena a lista de tarefas usando um comparador
-        Collections.sort(listaTarefas, new Comparator<Tarefa>() {
-            @Override
-            public int compare(Tarefa tarefa1, Tarefa tarefa2) {
-                // Compara as datas de vencimento
-                int compareDataVencimento = tarefa1.getDataVencimento().compareTo(tarefa2.getDataVencimento());
-                if (compareDataVencimento != 0) {
-                    return compareDataVencimento;
-                }
-                // Se as datas de vencimento forem iguais, compara as prioridades
-                return tarefa1.getPrioridade().compareTo(tarefa2.getPrioridade());
-            }
-        });
-
-        // Exibe as tarefas em ordem
-        for (Tarefa tarefa : listaTarefas) {
-            System.out.println(tarefa);
-        }
-    }
-
-
+	List<Tarefa> listaTarefas = new ArrayList<>(mapaTarefas.values());
+	// Ordena a lista de tarefas usando um comparador
+	Collections.sort(listaTarefas, new Comparator<Tarefa>() {
+		@Override
+		public int compare(Tarefa tarefa1, Tarefa tarefa2) {
+			// Compara as datas de vencimento
+			int compareDataVencimento = tarefa1.getDataVencimento().compareTo(tarefa2.getDataVencimento());
+			if (compareDataVencimento != 0) {
+				return compareDataVencimento;
+			}
+			// Se as datas de vencimento forem iguais, compara as prioridades
+			return tarefa1.getPrioridade().compareTo(tarefa2.getPrioridade());
+		}
+	});
+	// Exibe as tarefas em ordem
+	for (Tarefa tarefa : listaTarefas) {
+		System.out.println(tarefa);
+	}
+}
 }
 
