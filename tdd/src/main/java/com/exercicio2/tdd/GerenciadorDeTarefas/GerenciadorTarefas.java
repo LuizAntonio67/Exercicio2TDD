@@ -57,5 +57,16 @@ public boolean atualizaPrioridadeTarefa(int idProcurado, String prioridade){
 }
 return false;
 }
+
+public boolean excluiTarefa(int idProcurado) {
+	for(Tarefa tarefa: listaTarefas) {
+		if (tarefa.getId() == idProcurado) {
+			listaTarefas.remove(tarefa);
+			return true;
+		}
+}
+return false;
+}
+
 }
 
