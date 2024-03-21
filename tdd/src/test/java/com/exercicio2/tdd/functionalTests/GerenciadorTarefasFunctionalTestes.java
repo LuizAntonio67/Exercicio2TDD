@@ -1,3 +1,5 @@
+package com.exercicio2.tdd.functionalTests;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import java.time.LocalDate;
