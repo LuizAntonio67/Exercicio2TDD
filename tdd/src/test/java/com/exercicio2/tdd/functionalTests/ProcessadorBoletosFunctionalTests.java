@@ -55,13 +55,15 @@ class ProcessadorBoletosFunctionalTests {
     @Test
     void verificaValorMenor2() {
         lista.add(boleto1);
-        assertFalse(proc.processamentoBoletos(lista, fatura));
+        proc.processamentoBoletos(lista, fatura);
+        assertFalse(proc.verificaFaturaPaga(fatura.getId()));
     }
 
     @Test
     void verificaValorMaior2() {
         lista.add(boleto3);
-        assertTrue(proc.processamentoBoletos(lista, fatura));
+        proc.processamentoBoletos(lista, fatura);
+        assertTrue(proc.verificaFaturaPaga(fatura.getId()));
     }
 
 }
